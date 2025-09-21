@@ -1,0 +1,78 @@
+# =====================
+# OS / System Files
+# =====================
+.DS_Store
+Thumbs.db
+
+# =====================
+# Logs
+# =====================
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# =====================
+# Python
+# =====================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+.env/
+.venv/
+env/
+venv/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# =====================
+# Node.js
+# =====================
+node_modules/
+package-lock.json
+yarn.lock
+
+# =====================
+# Terraform
+# =====================
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+crash.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# =====================
+# AWS SAM / CloudFormation
+# =====================
+# SAM build artifacts
+.aws-sam/
+# CloudFormation packaged templates
+packaged-template.yaml
+packaged.yaml
+template.packaged.yaml
+
+# =====================
+# AWS Credentials / Config (NEVER COMMIT)
+# =====================
+*.pem
+*.key
+*.env
+.aws/
+
+# =====================
+# IDE / Editor Settings
+# =====================
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
