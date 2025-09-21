@@ -1,0 +1,23 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - echo Logging in to Amazon ECR...
+      - aws ecr get-login-password --region "$AWS_REGION" | docker login --username AWS --password-stdin "$ECR_REPO_URI"
+  build:
+    commands:
+      - echo Building the Docker image...
+      - docker build -t "$IMAGE_NAME:latest" . --provenance=false
+      - echo Tagging the Docker image...
+      - docker tag "$IMAGE_NAME:latest" "$ECR_REPO_URI:latest"
+  post_build:
+    commands:
+      - echo Pushing the Docker image to Amazon ECR...
+      - docker push "$ECR_REPO_URI:latest"
+      - echo Creating imagedefinitions.json for ECS deployment...
+      - printf '[{"name":"%s","imageUri":"%s:latest"}]' "$CONTAINER_NAME" "$ECR_REPO_URI" > imagedefinitions.json
+
+artifacts:
+  files:
+    - imagedefinitions.json
