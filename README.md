@@ -140,6 +140,6 @@ Cloud Administrator | Aspiring Cloud Engineer/Architect
 
 ## Acknowledgments
 This project was inspired by a course from [techwithlucy](https://github.com/techwithlucy).  
-The 2048 game application code is taken directly from the author’s original implementation. The `buildspec.yaml` file was edited to include variables for portability.  
+The 2048 game application code is taken directly from the author’s original implementation. The `buildspec.yml` file was edited to include variables for portability.  
 The architecture diagram included here is my own version, adapted from the original course diagram.  
 I designed and developed all Infrastructure-as-Code (CloudFormation, SAM, Terraform) and project documentation.  
