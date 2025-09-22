@@ -17,12 +17,12 @@ This pipeline automatically builds and deploys updates whenever code is pushed t
 - **AWS IAM** – Manages least-privilege roles and policies for ECS, CodeBuild, and CodePipeline.  
 
 ## Skills Applied
-- **CI/CD Automation**: Built a GitHub-triggered pipeline with **CodePipeline**.  
-- **Containerization**: Used **Docker** to package and deploy the 2048 game.  
-- **Amazon ECS/Fargate**: Deployed workloads without managing servers.  
-- **Amazon ECR**: Created a private registry for container images.  
-- **IAM Least Privilege**: Scoped roles/policies for pipeline, ECS tasks, and builds.  
-- **Monitoring & Logging**: Enabled **CloudWatch Logs** for ECS tasks and CodeBuild.  
+- Automating a **GitHub-triggered CI/CD pipeline** with AWS CodePipeline.  
+- Containerizing the **2048 game application** using Docker.  
+- Deploying workloads on **Amazon ECS with Fargate** to eliminate server management.  
+- Managing container images with a private **Amazon ECR repository**.  
+- Scoping IAM roles and policies to enforce **least-privilege access** for pipeline, ECS tasks, and builds.  
+- Enabling **CloudWatch Logs** for centralized monitoring of ECS tasks and CodeBuild.  
 
 ## Features
 - **Fully automated pipeline** – From GitHub commit → Build → Deploy to ECS.  
@@ -32,7 +32,7 @@ This pipeline automatically builds and deploys updates whenever code is pushed t
 - **Cross-service integration** – Seamless orchestration across ECR, ECS, S3, CodeBuild, and CodePipeline.  
 
 ## Tech Stack
-- **Languages:** Dockerfile, YAML  
+- **Languages:** Dockerfile
 - **AWS Services:** CodePipeline, CodeBuild, CodeDeploy, ECS (Fargate), ECR, S3, IAM, CloudWatch  
 - **IaC Tool:** Terraform  
 - **Other Tools:** GitHub, Docker, AWS CLI  
@@ -59,12 +59,12 @@ This pipeline automatically builds and deploys updates whenever code is pushed t
 
 - **Windows (PowerShell):**  
      ```powershell
-     try {
-         aws iam create-service-linked-role --aws-service-name ecs.amazonaws.com
-     } catch {
-         Write-Host "Service-linked role already exists, continuing..."
-     }
-     ```
+	try {
+    	aws iam create-service-linked-role --aws-service-name ecs.amazonaws.com
+	} catch {
+    	Write-Host "Service-linked role already exists, continuing..."
+	}
+	```
 
 - **Linux:**  
      ```bash
@@ -89,7 +89,7 @@ This pipeline automatically builds and deploys updates whenever code is pushed t
 ## How to Use
 1. **Deploy the infrastructure** using Terraform.  
 
-2. **Access the application** in a web browser by going to the ECS Task Public IP address:  
+2. **Access the application** in a web browser via the ECS Task Public IP address:  
 	```plaintext
 	http://<ECS Task Public IP Address>
 	```
@@ -97,7 +97,7 @@ This pipeline automatically builds and deploys updates whenever code is pushed t
 
 ## Project Structure
 ```plaintext
-aws-2048-CI/CD-pipeline
+aws-2048-game-cicd-pipeline
 ├── 2048-game/                    		  # 2048 game source code
 │   ├── buildspec.yaml			          # Build specification reference
 │   └── Dockerfile        				  # Dockerfile
